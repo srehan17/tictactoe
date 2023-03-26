@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  margin-top: 100px;
+  margin: 100px 200px
 }
 
 .App-logo {
@@ -35,4 +37,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.button {
+  border-radius: 0;
+  background-color: rgb(215, 236, 134);
+  width: 100px;
+  height: 100px;
+}
+
+.button:hover {
+  background-color: #61dafb;
 }
