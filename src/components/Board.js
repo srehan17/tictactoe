@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Square } from './Square';
+import { Alert } from 'react-bootstrap';
 
 export const Board = () => {
 
     const [squares, setSquares] = useState(Array(9).fill(null));
-    const [values, setValues] = useState([]);
     const [toggle, setToggle] = useState(false);
     const [xIsNext, setXIsNext] = useState(true);
-    let alert;
+    let alert = "";
 
     const onSquareClick = (i) => {
         if (squares[i] || calculateWinner(squares)) {
@@ -52,7 +52,7 @@ export const Board = () => {
     let status;
 
     if (winner) {
-        status = "Winner: " + winner;
+        status = "WINNER: " + winner;
     } 
     else {
         status = "Next player: " + (xIsNext ? "X" : "O");
@@ -60,24 +60,23 @@ export const Board = () => {
 
 
   return (
-    <>
-        <div className="alert">{alert}</div>
+    <div className='board'>
         <div className="status">{status}</div>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", marginTop: "10px", justifyContent: 'center' }}>
             <Square value={squares[0]} onSquareClick={() => onSquareClick(0)} toggle={toggle}/>
             <Square value={squares[1]} onSquareClick={() => onSquareClick(1)} toggle={toggle}/>
             <Square value={squares[2]} onSquareClick={() => onSquareClick(2)} toggle={toggle}/>
         </div>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", justifyContent: 'center' }}>
             <Square value={squares[3]} onSquareClick={() => onSquareClick(3)} toggle={toggle}/>
             <Square value={squares[4]} onSquareClick={() => onSquareClick(4)} toggle={toggle}/>
             <Square value={squares[5]} onSquareClick={() => onSquareClick(5)} toggle={toggle}/>
         </div>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", justifyContent: 'center' }}>
             <Square value={squares[6]} onSquareClick={() => onSquareClick(6)} toggle={toggle}/>
             <Square value={squares[7]} onSquareClick={() => onSquareClick(7)} toggle={toggle}/>
             <Square value={squares[8]} onSquareClick={() => onSquareClick(8)} toggle={toggle}/>
         </div>
-    </>
+    </div>
   )
 }
