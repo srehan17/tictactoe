@@ -12,7 +12,7 @@ it('renders without crashing', () => {
 describe("Start Game Button Test", () => {
   it("Renders correctly in DOM", () => {
       shallow(
-          <Button>Start Song</Button> 
+          <Button>Start Game</Button> 
       );
   });
 });

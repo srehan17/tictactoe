@@ -13,7 +13,7 @@ function Game() {
     setStartGame(true)
   }
 
-  const onGoBackClick = () => {
+  const onExitClick = () => {
     setStartGame(false)
   }
 
@@ -21,8 +21,8 @@ function Game() {
     <div className="Game">
       <Header />
       <div className="d-flex">
-        {!startGame && <Button size="lg" type="button" variant="primary" onClick={onStartClick}>Start Game</Button>}
-        {startGame && <Button size="lg" type="button" color="Go Back" onClick={onGoBackClick}>Go Back</Button>}
+        {!startGame && <Button size="lg" type="button" className="startExitButtons" variant="primary" onClick={onStartClick}>Start Game</Button>}
+        {startGame && <Button size="lg" type="button" color="Go Back" className="startExitButtons" onClick={onExitClick}>Exit</Button>}
       </div>
       
       {startGame && <Board/>}
